@@ -18,7 +18,7 @@ const Projects = () => (
             <Hr />
 
             <CardInfo className="card-info">{p.description}</CardInfo>
-            <div>
+            <div style={{margin:'0 0 50px'}}>
               <TitleContent>Tech Stack</TitleContent>
               <Hr />
               <TagList>
@@ -27,10 +27,10 @@ const Projects = () => (
                 })}
               </TagList>
             </div>
-            <UtilityList>
+            {/* <UtilityList>
               <ExternalLinks href={p.visit}>Live Preview</ExternalLinks>
               <ExternalLinks href={p.source}>Source Code</ExternalLinks>
-            </UtilityList>
+            </UtilityList> */}
           </BlogCard>
         );
       })}
