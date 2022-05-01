@@ -283,3 +283,30 @@ export const LinkIconImg = styled.div`
 export const Link = styled.a`
   color: ${(props) => props.theme.colors.link}
 `;
+
+export const Title = styled.h4`
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  display: flex;
+  background: linear-gradient(
+    121.57deg,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0.66) 30.15%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 4px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 20px;
+    line-height: 28px;
+  }
+`;
