@@ -6,7 +6,11 @@ export const WrapperGrid = styled.div`
     props.full &&
     css`
       grid-column: 1 / 3;
-    `}
+    `};
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    grid-column: 1 /3;
+  }
 `;
 
 export const Form = styled.form`
@@ -57,7 +61,7 @@ export const Textarea = styled.textarea`
   border-radius: 12px;
   background: #212d45;
   color: #fbfbfc;
-  outline:none;
+  outline: none;
 
   &:focus,
   &:active {
