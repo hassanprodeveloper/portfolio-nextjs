@@ -17,6 +17,7 @@ export const Form = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const Input = styled.input`
@@ -66,5 +67,28 @@ export const Textarea = styled.textarea`
   &:focus,
   &:active {
     border: 1px solid #ffffff77;
+  }
+`;
+
+export const SubmittedMessageText = styled.span`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: ${(props) =>
+    props.type === "success"
+      ? "rgba(0, 255, 0, 0.65)"
+      : "rgba(255, 0, 0, 0.85)"};
+  transition: all 0.3s ease-in-out;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 14px;
+    line-height: 14px;
   }
 `;

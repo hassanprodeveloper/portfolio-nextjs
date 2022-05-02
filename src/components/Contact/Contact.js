@@ -5,13 +5,20 @@ import {
   ButtonFront,
   Section,
   SectionDivider,
+  SectionText,
   SectionTitle,
   Title,
 } from "../../styles/GlobalComponents";
 
 import { submitContactMessage } from "../../firebase/firestore/contact";
 
-import { WrapperGrid, Input, Textarea, Form } from "./ContactStyles";
+import {
+  WrapperGrid,
+  Input,
+  Textarea,
+  Form,
+  SubmittedMessageText,
+} from "./ContactStyles";
 
 const defaultMessage = {
   name: "",
@@ -73,6 +80,10 @@ const Contact = () => {
   return (
     <Section>
       <SectionTitle>Get In Touch </SectionTitle>
+      <SectionText>
+        Feel free to ask anything you want, if you have any queries or want to
+        discuss your project then you can contact me.
+      </SectionText>
       <Form>
         <WrapperGrid>
           <Title>Name</Title>
@@ -107,16 +118,15 @@ const Contact = () => {
           />
         </WrapperGrid>
 
-        <WrapperGrid full>
-          {!!submittedMessage && (
-            <span
-              style={{
-                color: submittedMessage.type === "success" ? "green" : "red",
-              }}
-            >
+        {!!submittedMessage && (
+          <WrapperGrid full>
+            <SubmittedMessageText type={submittedMessage.type}>
               {submittedMessage.text}
-            </span>
-          )}
+            </SubmittedMessageText>
+          </WrapperGrid>
+        )}
+
+        <WrapperGrid full>
           <ButtonBack disabled={submitting}>
             {submitting ? "Loading..." : "Submit"}
             <ButtonFront
