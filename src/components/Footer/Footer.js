@@ -39,7 +39,7 @@ const Footer = () => {
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>
-            &copy; {new Date().getFullYear()} All rights reserved by{" "}
+            &copy; {new Date().getFullYear()} All rights are reserved by{" "}
             <Link
               target="_blank"
               href={socialAccounts.linkedin}
