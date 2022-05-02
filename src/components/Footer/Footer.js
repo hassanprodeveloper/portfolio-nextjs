@@ -5,9 +5,11 @@ import {
   AiFillLinkedin,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import { socialAccounts } from "../../constants/urls";
+
 import { Link } from "../../styles/GlobalComponents";
-import { SocialIcons } from "../Header/HeaderStyles";
+
+import { socialAccounts } from "../../constants/urls";
+import { contactEmail, contactNumber } from "../../constants/personalInfo";
 import {
   CompanyContainer,
   FooterWrapper,
@@ -19,6 +21,7 @@ import {
   SocialContainer,
   SocialIconsContainer,
 } from "./FooterStyles";
+import { SocialIcons } from "../Header/HeaderStyles";
 
 const Footer = () => {
   return (
@@ -26,13 +29,11 @@ const Footer = () => {
       <LinkList>
         <LinkColumn>
           <LinkTitle>Contact Number</LinkTitle>
-          <LinkItem href="tel:+923047955183">+92 304 7955183</LinkItem>
+          <LinkItem href={`tel:${contactNumber}`}>{contactNumber}</LinkItem>
         </LinkColumn>
         <LinkColumn>
           <LinkTitle>Email</LinkTitle>
-          <LinkItem href="hassanakram.n@gmail.com">
-            hassanakram.n@gmail.com
-          </LinkItem>
+          <LinkItem href={`mailto:${contactEmail}`}>{contactEmail}</LinkItem>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
