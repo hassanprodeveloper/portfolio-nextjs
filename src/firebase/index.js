@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_FIREBASE_AUTO_DOMAIN,
-  projectId: process.env.NEXT_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyDPnYvPeTH-iWZhuipvzzfr-8GsLriDuNc",
+  authDomain: "portfolio-nextjs-a6150.firebaseapp.com",
+  projectId: "portfolio-nextjs-a6150",
+  storageBucket: "portfolio-nextjs-a6150.appspot.com",
+  messagingSenderId: "930505827030",
+  appId: "1:930505827030:web:8165f1e42917282df09f77",
+  measurementId: "G-FS024WFYP5",
 };
 
 const app = initializeApp(firebaseConfig);
