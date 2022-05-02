@@ -78,7 +78,7 @@ const Contact = () => {
   }, [submittedMessage]);
 
   return (
-    <Section>
+    <Section id="contact">
       <SectionTitle>Get In Touch </SectionTitle>
       <SectionText>
         Feel free to ask anything you want, if you have any queries or want to
