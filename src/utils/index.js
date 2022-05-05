@@ -5,14 +5,12 @@ export async function apiPost(path, body) {
     Authorization: "Bearer " + process.env.AUTHORIZATION_BEARER,
   };
 
-  const response = await fetch(process.env.BASE_URL + path, {
+  const response = await fetch(window.location.origin + path, {
     method: "post",
     headers,
     body: JSON.stringify(body),
   });
   const data = await response.json();
-
-  console.log("api post response",response);
 
   if (!response.ok) {
     throw new Error(data.message);
