@@ -54,7 +54,7 @@ const Contact = () => {
         } else {
           setSubmittedMessage({
             type: "error",
-            text: "Something went wrong, check your internet and try again.",
+            text: "Something went wrong, better try again with another email",
           });
         }
 
@@ -62,7 +62,7 @@ const Contact = () => {
       } catch (error) {
         setSubmittedMessage({
           type: "error",
-          text: "Something went wrong, check your internet and try again.",
+          text: "Something went wrong, check your internet and try again. ",
         });
 
         setSubmitting(false);
