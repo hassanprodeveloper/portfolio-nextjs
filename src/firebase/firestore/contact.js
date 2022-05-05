@@ -7,10 +7,9 @@ import { apiPost } from "../../utils";
 export const submitContactMessage = async (data = {}) => {
   const createdAt = new Date().getTime();
 
-  const apiResp = await apiPost(`/api/email`, { email: data.email });
-
   try {
-    await addDoc(contactDb, { ...data, createdAt, emailSent: !!apiResp?.ok });
+    await addDoc(contactDb, { ...data, createdAt });
+    await apiPost(`/api/email`, { email: data.email });
 
     return !!1;
   } catch (error) {
