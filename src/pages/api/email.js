@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-import { AUTHORIZATION_BEARER } from "../../constants";
 
 // import EmailTemplate from "/public/files/EmailTemplate.html";
 
@@ -11,20 +10,20 @@ export default async function handler(req, res) {
       const { email } = req.body;
       const { authorization } = req.headers;
 
-      if (authorization === AUTHORIZATION_BEARER) {
+      if (authorization === process.env.AUTHORIZATION_BEARER) {
         return res.status(401).json({ message: "Unauthorized" });
       }
 
       let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "hassanakram.contact@gmail.com",
-          pass: "contact@Google01",
+          user: process.env.SENDER_EMAIL,
+          pass: process.env.SENDER_PASSWORD,
         },
       });
 
       let mailOptions = {
-        from: "hassanakram.contact@gmail.com",
+        from: process.env.SENDER_EMAIL,
         to: email,
         subject: `Muhammad Hassan`,
 

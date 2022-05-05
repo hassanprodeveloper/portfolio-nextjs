@@ -1,10 +1,8 @@
-import { AUTHORIZATION_BEARER } from "../constants";
-
 export async function apiPost(path, body) {
   const headers = {
     Accept: "application/json",
     "Content-Type": "application/json",
-    Authorization: "Bearer " + AUTHORIZATION_BEARER,
+    Authorization: "Bearer " + process.env.AUTHORIZATION_BEARER,
   };
 
   const response = await fetch(window.location.origin + path, {
