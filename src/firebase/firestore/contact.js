@@ -8,8 +8,10 @@ export const submitContactMessage = async (data = {}) => {
   const createdAt = new Date().getTime();
 
   try {
-    await addDoc(contactDb, { ...data, createdAt, emailSent: !!apiResp.ok });
     const apiResp = await apiPost(`/api/email`, { email: data.email });
+
+    await addDoc(contactDb, { ...data, createdAt, emailSent: !!apiResp.ok });
+
     return !!1;
   } catch (error) {
     return !!0;
