@@ -38,28 +38,34 @@ const Contact = () => {
     setMessage((prev) => ({ ...prev, [key]: value }));
   };
 
+  console.log(" message object", message);
   const handleSubmit = async () => {
-    if (message.name && message.email && message.message)
+    console.log("handle submit message object", message);
+    if (message.name && message.email && message.message) {
       try {
         setSubmitting(true);
-        const submitted = await submitContactMessage(message);
+        console.log("try handle submit message object", message);
+        const res = await submitContactMessage(message);
 
-        if (submitted) {
+        console.log("res", res);
+
+        if (res.statusCode === 200) {
           setMessage(defaultMessage);
 
           setSubmittedMessage({
             type: "success",
-            text: "Thanks for getting in touch, I will get back to you soon.",
+            text: res.message,
           });
         } else {
           setSubmittedMessage({
             type: "error",
-            text: "Something went wrong, better try again with another email",
+            text: res.message,
           });
         }
 
         setSubmitting(false);
       } catch (error) {
+        console.log("handle submit catch error", error);
         setSubmittedMessage({
           type: "error",
           text: "Something went wrong, check your internet and try again. ",
@@ -67,6 +73,7 @@ const Contact = () => {
 
         setSubmitting(false);
       }
+    }
   };
 
   useMemo(() => {

@@ -3,3 +3,5 @@ export const socialAccounts = {
   linkedin: "https://www.linkedin.com/in/hassanakram-n/",
   instagram: "https://www.instagram.com/hassanakram.n/",
 };
+
+export const SEND_EMAIL_API_ROUTE = process.env.BASE_URL + "/api/email";
