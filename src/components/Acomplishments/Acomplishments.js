@@ -7,7 +7,7 @@ const data = [
   { number: 1, text: 'Android App on PlayStore' },
   { number: 1, text: 'IOS App on Apple Store', },
   { number: 4, text: 'Web Applications', },
-  { number: 400, text: 'Github Contributions', }
+  { number: 1000, text: 'Git Contributions', }
 ];
 
 const Acomplishments = () => (
