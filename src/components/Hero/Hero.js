@@ -1,4 +1,5 @@
 import React from "react";
+import { appName } from "../../constants/personalInfo";
 
 import {
   Section,
@@ -20,7 +21,7 @@ const Hero = (props) => (
         </SectionTitle>
 
         <SectionText>
-          Hey there, This is Muhammad Hassan. I am professional Web & Mobile
+          Hey there, This is {appName}. I am professional Web & Mobile
           hybrid application developer.
         </SectionText>
         <Button

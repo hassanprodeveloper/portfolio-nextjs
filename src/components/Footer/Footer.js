@@ -9,7 +9,7 @@ import {
 import { Link } from "../../styles/GlobalComponents";
 
 import { socialAccounts } from "../../constants/urls";
-import { contactEmail, contactNumber } from "../../constants/personalInfo";
+import { appName, contactEmail, contactNumber } from "../../constants/personalInfo";
 import {
   CompanyContainer,
   FooterWrapper,
@@ -45,7 +45,7 @@ const Footer = () => {
               href={socialAccounts.linkedin}
               style={{ fontWeight: "800" }}
             >
-              Muhammad Hassan
+              {appName}
             </Link>
             .
           </Slogan>
