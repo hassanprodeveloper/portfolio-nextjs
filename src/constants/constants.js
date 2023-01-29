@@ -25,7 +25,7 @@ export const projects = [
     tags: ["Javascript", "React Js", "Redux", "Rest API"],
     id: 3,
   },
-];
+]
 
 export const TimeLineData = [
   { year: 2019, text: "Started my journey as a student in development." },
@@ -33,4 +33,5 @@ export const TimeLineData = [
   { year: 2021, text: "Self-Learned more about React." },
   { year: 2021, text: "Got my first job as a Junior React Developer." },
   { year: 2022, text: "Get Promotion as a React Developer." },
-];
+  { year: 2023, text: "Working as ReactJs/ NextJs Developer." },
+]

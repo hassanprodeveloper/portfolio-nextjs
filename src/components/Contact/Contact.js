@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from "react"
 
 import {
   ButtonBack,
@@ -8,9 +8,9 @@ import {
   SectionText,
   SectionTitle,
   Title,
-} from "../../styles/GlobalComponents";
+} from "../../styles/GlobalComponents"
 
-import { submitContactMessage } from "../../firebase/firestore/contact";
+import { submitContactMessage } from "../../firebase/firestore/contact"
 
 import {
   WrapperGrid,
@@ -18,71 +18,71 @@ import {
   Textarea,
   Form,
   SubmittedMessageText,
-} from "./ContactStyles";
+} from "./ContactStyles"
 
 const defaultMessage = {
   name: "",
   email: "",
   message: "",
-};
+}
 
 const Contact = () => {
-  const [submitting, setSubmitting] = useState(false);
-  const [submittedMessage, setSubmittedMessage] = useState(null);
-  const [message, setMessage] = useState(defaultMessage);
+  const [submitting, setSubmitting] = useState(false)
+  const [submittedMessage, setSubmittedMessage] = useState(null)
+  const [message, setMessage] = useState(defaultMessage)
 
   const handleSetMessage = (element) => {
-    let key = element.target.name;
-    let value = element.target.value;
+    let key = element.target.name
+    let value = element.target.value
 
-    setMessage((prev) => ({ ...prev, [key]: value }));
-  };
+    setMessage((prev) => ({ ...prev, [key]: value }))
+  }
 
-  console.log(" message object", message);
+  console.log(" message object", message)
   const handleSubmit = async () => {
-    console.log("handle submit message object", message);
+    console.log("handle submit message object", message)
     if (message.name && message.email && message.message) {
       try {
-        setSubmitting(true);
-        console.log("try handle submit message object", message);
-        const res = await submitContactMessage(message);
+        setSubmitting(true)
+        console.log("try handle submit message object", message)
+        const res = await submitContactMessage(message)
 
-        console.log("res", res);
+        console.log("res", res)
 
         if (res.statusCode === 200) {
-          setMessage(defaultMessage);
+          setMessage(defaultMessage)
 
           setSubmittedMessage({
             type: "success",
             text: res.message,
-          });
+          })
         } else {
           setSubmittedMessage({
             type: "error",
             text: res.message,
-          });
+          })
         }
 
-        setSubmitting(false);
+        setSubmitting(false)
       } catch (error) {
-        console.log("handle submit catch error", error);
+        console.log("handle submit catch error", error)
         setSubmittedMessage({
           type: "error",
           text: "Something went wrong, check your internet and try again. ",
-        });
+        })
 
-        setSubmitting(false);
+        setSubmitting(false)
       }
     }
-  };
+  }
 
   useMemo(() => {
     if (!!submittedMessage) {
       setTimeout(() => {
-        setSubmittedMessage(null);
-      }, 2000);
+        setSubmittedMessage(null)
+      }, 2000)
     }
-  }, [submittedMessage]);
+  }, [submittedMessage])
 
   return (
     <Section id="contact">
@@ -125,13 +125,13 @@ const Contact = () => {
           />
         </WrapperGrid>
 
-        {!!submittedMessage && (
+        {/* {!!submittedMessage && (
           <WrapperGrid full>
             <SubmittedMessageText type={submittedMessage.type}>
               {submittedMessage.text}
             </SubmittedMessageText>
           </WrapperGrid>
-        )}
+        )} */}
 
         <WrapperGrid full>
           <ButtonBack disabled={submitting}>
@@ -139,8 +139,7 @@ const Contact = () => {
             <ButtonFront
               type="button"
               disabled={submitting}
-              onClick={handleSubmit}
-            >
+              onClick={handleSubmit}>
               {submitting ? "Loading..." : "Submit"}
             </ButtonFront>
           </ButtonBack>
@@ -148,7 +147,7 @@ const Contact = () => {
       </Form>
       <SectionDivider />
     </Section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
