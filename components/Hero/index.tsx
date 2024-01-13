@@ -1,3 +1,4 @@
+import { GITHUB_PROFILE_URL, LINKEDIN_PROFILE_URL } from "@/constants/urls"
 import Link from "next/link"
 
 const Hero = () => {
@@ -22,20 +23,22 @@ const Hero = () => {
 									scalable applications using React, React Native, Next.js, and
 									modern frameworks. Skilled in enhancing functionality through
 									cloud services like Firebase and GitLab, ensuring high-quality
-									solutions and prioritising user experience.
+									solutions and prioritizing user experience.
 								</p>
 								<div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 									<Link
-										href="https://nextjstemplates.com/templates/saas-starter-startup"
+										target="_blank"
+										href={LINKEDIN_PROFILE_URL}
 										className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
 									>
-										🔥 Get Pro
+										Linkedin
 									</Link>
 									<Link
-										href="https://github.com/NextJSTemplates/startup-nextjs"
+										target="_blank"
+										href={GITHUB_PROFILE_URL}
 										className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
 									>
-										Star on GitHub
+										GitHub
 									</Link>
 								</div>
 							</div>
