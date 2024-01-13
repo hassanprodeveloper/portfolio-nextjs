@@ -5,31 +5,31 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Raza Fayyaz",
+    designation: "Development Lead @SALDIRID",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Hassan is a very good resource to have in the team. Quick learner and great coding capabilities!",
     image: "/images/testimonials/auth-01.png",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "Aliraza Aslam",
+    designation: "CMS Developer @workTech",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "I enthusiastically recommend Muhammad Hassan Akram as a React developer. His ability to craft elegant and efficient solutions to complex problems is a authentication to his deep understanding of the technology. In addition to his technical prowess, Hassan is an excellent communicator and collaborator, making him a valuable asset to any development team. With his dedication and skill set, I have no doubt that Hassan will excel in any React development role he takes on.",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
-  {
-    id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
-    content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-03.png",
-    star: 5,
-  },
+  // {
+  //   id: 3,
+  //   name: "Lethium Frenci",
+  //   designation: "Founder @Lineicons",
+  //   content:
+  //     "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+  //   image: "/images/testimonials/auth-03.png",
+  //   star: 5,
+  // },
 ];
 
 const Testimonials = () => {
