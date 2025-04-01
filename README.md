@@ -12,7 +12,7 @@ A portfolio built in React and NextJS. Simple, clean and fast.
   
 ## Demo
 
-[Live Preview](https://hassanakram.vercel.app/)
+[Live Preview](https://hassanprodeveloper.vercel.app/)
 
 ## Run Project 
 
